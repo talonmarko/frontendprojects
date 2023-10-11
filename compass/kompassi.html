@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<style>
+
+body{
+	filter: hue-rotate(120deg);
+}
+
+#kompassi{
+	position: relative;
+	width: 500px;
+	height: 500px;
+	border: 2px solid black;
+	border-radius: 50%;
+	background-color: grey;
+	background-image: url(kompassitausta.png);
+	filter: invert(100%);
+	background-position: -100px 0px;
+	box-shadow: 0px 0px 3px #000;
+	animation-name: maapallo;
+	animation-duration: 15s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes maapallo{
+	0%{
+		background-position: 0px 0px;
+	}
+	100%{
+		background-position: 977px 0px;
+		}
+}
+
+#lasipinta{
+	position: absolute; 
+	top: 0;
+	left: 0;
+	width: 500px;
+	height: 500px;
+	background-color: rgba(255,255,255,0.5);
+	background: radial-gradient(#000 1%, transparent 10%, transparent 10%, #fff);
+	border-radius: 50%;
+	box-shadow: 0px 0px 10px #000 inset;
+
+}
+
+#viisari{
+	position: absolute;
+	width: 10px;
+	height: 400px;
+	top: 50px;
+	left: 250px;
+	border-radius: 50%;
+	background-color: black;
+	background: linear-gradient(0deg, #4b00fa, #fa0011);
+	transform: rotate(45deg);
+	transform-origin: center center;
+	box-shadow: 0px 0px 5px #eee;
+	animation-name: rotaatio;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	/* z-index: 10; */
+	/* outline: 1px solid pink; */
+}
+
+@keyframes rotaatio{
+	0%{
+	transform: rotate(0deg);
+	}
+	100%{
+	transform: rotate(360deg);
+	}
+}
+
+
+#nuppi{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: 234px;
+	left: 239px;
+	border-radius: 50%;
+	border: 2px solid pink;
+	background-color: black;
+}
+
+#north{
+	position: absolute;
+	top: 4px;
+	left: 245px;
+	font-family: digital-7;
+	font-weight: bold;
+	font-size: 20px;
+	color: rgb(123, 80, 1);
+}
+
+#south{
+	position: absolute;
+	bottom: 4px;
+	left: 245px;
+	font-family: digital-7;
+	font-weight: bold;
+	font-size: 20px;
+	color: orange;
+}
+	
+	#west{
+	position: absolute;
+	top: 245px;
+	left: 4px;
+	font-family: digital-7;
+	font-weight: bold;
+	font-size: 20px;
+	color: orange;
+}
+
+	#east{
+	position: absolute;
+	top: 245px;
+	right: 4px;
+	font-family: digital-7;
+	font-weight: bold;
+	font-size: 20px;
+	color: orange;
+}
+
+#northwest{
+	position: absolute;
+	top: 75px;
+	left: 75px;
+	font-family: digital-7;
+	font-weight: bold;
+	font-size: 20px;
+	color: orange;
+}
+
+#southwest{
+	position: absolute;
+	bottom: 75px;
+	left: 75px;
+	font-family: digital-7;
+	font-weight: bold;
+	font-size: 20px;
+	color: orange;
+}
+	
+	#northeast{
+	position: absolute;
+	top: 75px;
+	right: 75px;
+	font-family: digital-7;
+	font-weight: bold;
+	font-size: 20px;
+	color: orange;
+}
+
+	#southeast{
+	position: absolute;
+	bottom: 75px;
+	right: 75px;
+	font-family: digital-7;
+	font-weight: bold;
+	font-size: 20px;
+	color: orange;
+
+}
+
+</style>
+</head>
+<body>
+	<div id="kompassi">
+		<div id="viisari"></div>
+		<div id="nuppi"></div>
+		
+		<div id="north">N</div>
+		<div id="south">S</div>
+		<div id="west">W</div>
+		<div id="east">E</div>
+		<div id="northwest">NW</div>
+		<div id="southwest">SW</div>
+		<div id="northeast">NE</div>
+		<div id="southeast">SE</div>
+
+		<div id="lasipinta"></div>
+	</div>
+
+</body>
+</html>

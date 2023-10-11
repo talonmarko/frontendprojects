@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery toggle button</title>
+    <style>
+
+      body{
+        /* filter: hue-rotate(90deg); */
+        background: #f6ebe5 ;
+      }
+
+h1{
+    font-size:30px;
+    font-family:monospace;
+    font-weight: bold;
+    text-align: center;
+    }
+ p{
+    text-align: center;
+    font-size:40px;
+    font-family: monospace;
+    align-items: center;
+ }
+
+ button{
+  position: static;
+  /* clear: both; */
+  display: block;
+  padding: 2.5px;
+  margin: 5px;
+ }
+
+ h2{
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: bold;
+ }
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+  $("#leipateksti").click(function(){
+    $(this).text($(this).text() == 'Piilota teksti' ? 'Näytä teksti' : 'Piilota teksti');
+    $("p").toggle(1000);
+  });
+});
+
+$(document).ready(function(){
+  $("#kuva").click(function(){
+    $(this).text($(this).text() == 'Piilota kuva' ? 'Näytä kuva' : 'Piilota kuva');
+    $("img").toggle(1000);
+  });
+});
+
+$(document).ready(function(){
+  $("#otsikko").click(function(){
+    $(this).text($(this).text() == 'Piilota otsikot' ? 'Näytä otsikot' : 'Piilota otsikot');
+    $("h1").toggle(1000);
+  });
+});
+
+</script>
+
+</head>
+<body>
+
+  <h1>Klikkaa nappia piilottaaksesi kuvan</h1>
+    <center><img src="c:\Users\marko.keskitalo\OneDrive - Hengitysliitto ry\Ohjelmointi45\luovilogo.png"
+    width=50%" 
+    height="500"/>
+    <br>
+
+<button id="kuva">Piilota kuva</button>
+
+<h1>Klikkaa nappia piilottaaksesi tekstit</h1>
+  <p>Tässä on tekstiä.</p>
+  <p>Tässä on lisää tekstiä.</p>
+  <p>Tässä on vielä lisää tekstiä.</p>
+
+<button id="leipateksti">Piilota teksti</button>
+
+<h1>Klikkaa nappia piilottaaksesi otsikot</h1>
+
+<button id="otsikko">Piilota otsikot</button>
+
+<h2>Marko Keskitalo TVT-C 2023</h2>
+
+<input type="color"
+
+</body>
+</html>

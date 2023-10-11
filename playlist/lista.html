@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<style>
+
+.style1{
+	background-color: #000;
+	color: #fff;
+	width: 600px;
+	height: 450px;
+	border-radius: 10px;
+	font-family: "Digital-7";
+	font-size: 24px;
+	text-align: center;
+	line-height: 40px;
+	letter-spacing: 2px;
+}
+
+.style2{
+	background-color: pink;
+	color: #000;
+	width: 600px;
+	height: 450px;
+	border-radius: 10px;
+	font-family: "Digital-7";
+	font-style: italic;
+	font-weight: bold;
+	font-size: 24px;
+	text-align: center;
+	line-height: 40px;
+	letter-spacing: 2px;
+}
+
+.style3{
+	background-color: rgba(255,255,255,0.5);
+	background: linear-gradient(45deg, #121212, #b5bdb7);
+	width: 600px;
+	height: 450px;
+	border-radius: 10px;
+	color: #fff;
+	font-family: "Digital-7", cursive;
+	font-weight: bold;
+	font-size: 24px;
+	text-align: center;
+	line-height: 40px;
+	letter-spacing: 2px;
+}
+
+.style3 li:nth-child(odd){
+	background-color: black;
+	color: #ff000;
+	border-radius: 10px;
+}
+</style>
+<script>
+	function GeneratePlaylist(){
+	var songs = new Array;
+		songs.push("Sometimes Things get, Whatever");
+		songs.push("Complications");
+		songs.push("Slip");
+		songs.push("Some Kind Of Blue");
+		songs.push("Brazil (2nd edit)");
+		songs.push("Alone With You");
+		songs.push("I Remember");
+		songs.push("Faxing Berlin");
+		songs.push("Not Exactly");
+		songs.push("Arguru");
+		songs.push("So There i Was");
+		
+		var playlist = document.getElementById("playlist");
+		var songsCount = songs.length-1;
+		var i = 0;
+		var buffer = "";
+		
+		while(i<=songsCount) {
+			buffer += '<li>' + songs[i] + '</li>';
+			i++;
+		}
+		
+		playlist.innerHTML = buffer;
+}
+		
+function sortPlaylist(){
+    var playlist = document.getElementById("playlist");
+    var songs = playlist.getElementsByTagName("li");
+    //console.log(songs.length);
+
+    /* konvertoidaan HTMLCollection -lista muuttujalistaksi */
+    songs = Array.from(songs);
+
+    //console.log("Alkuperäinen järjestys:<br/>");
+    //console.log(songs);
+
+    /* järjestetään muuttujalista aakkosittain (A-->Ö) */
+    songs.sort((a, b) => a.outerText.localeCompare(b.outerText));
+
+    var buffer = "";
+    var i = 0;
+
+    while(i<=songs.length-1){
+        buffer += '<li>' + songs[i].outerText + '</li>';
+        i++;
+    }
+
+    playlist.innerHTML = buffer;
+}
+
+function changeStyle(style){
+	var playlist = document.getElementById("playlist");
+		playlist.setAttribute("class", style);
+	
+}
+
+function resetStyles(){
+	document.location.reload();
+}
+</script>
+</head>
+<body onload="GeneratePlaylist();">
+<h1>Deadmau5 - Random Album Title</h1>
+<ol id="playlist" class="style1">
+</ol>
+
+<input type="button" value="style 1" onClick="changeStyle('style1');"/>
+<input type="button" value="style 2" onClick="changeStyle('style2');"/>
+<input type="button" value="style 3" onClick="changeStyle('style3');"/>
+<input type="button" value="reset styles" onClick="resetStyles();"/>
+
+<input type="button" value="generate playlist" onClick="GeneratePlaylist();"/>
+<input type="button" value="sort playlist" onClick="sortPlaylist();"/>
+
+
+</body>
+</html>

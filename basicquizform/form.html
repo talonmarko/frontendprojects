@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        text-align: center;
+        background-color: #edd99c;
+      }
+
+      h1 {
+        font-family: monospace;
+        -webkit-text-stroke: 2px black;
+        font-size: 50px;
+        color: #FFFDD0;
+        text-shadow: 6px 6px 0px rgba(255, 255, 255, 0.125);
+      }
+
+      h2{
+        font-family: monospace;
+        font-size: 25px;
+        color: #000000;
+
+      }
+
+      h3 {
+        font-family: monospace;
+        color: #FFFDD0;
+        top: 800px;
+        font-size: 25px;
+        text-shadow: 6px 6px 0px rgba(255, 255, 255, 0.125);
+
+      }
+
+
+
+      #container {
+        position: relative;
+        margin: 0 auto;
+        background: rgb(254, 191, 37);
+        background: linear-gradient(0deg, rgba(254, 191, 37, 1) 0%, rgba(173, 6, 149, 1) 92%);
+        height: auto;
+        width: auto;
+        padding: 10px;
+        width: 500px;
+        border: 2px solid black;
+        color: #151515;
+        line-height: 20px;
+        font-weight: bold;
+        text-shadow: 0.25px 0.25px #a1a1a1;
+        letter-spacing: 1px;
+        font-size: 20px;
+      }
+
+      #itguy {
+        position: absolute;
+        width: 350px;
+        height: 800px;
+        left: 87.5px;
+        background-image: url(itguy4.PNG);
+        background-position: 0px -50px;
+      }
+
+      #itguy2 {
+        position: absolute;
+        width: 350px;
+        height: 800px;
+        right: 87.5px;
+        background-image: url(itguy4.PNG);
+        background-position: 0px -50px;
+        -webkit-transform: scaleX(-1);
+      }
+
+    </style>
+    <script>
+
+    </script>
+
+  </head>
+  <body>
+
+  <h1>HTML Forms (testailua)</h1>
+  <h2>alaotsikon placeholder</h2>
+
+  <div id="itguy"></div>
+  <div id="itguy2"></div>
+
+  <div id="container">
+    <div id=""></div>
+    <div id=""></div>
+    <div id=""></div>
+    <div id=""></div>
+
+    <label for="etunimi">Etunimi:</label><br><br>
+    <input type="text" id="etunimi" name="" value=""><br>
+    <br>
+    <label for="sukunimi">Sukunimi:</label><br><br>
+    <input type="text" id="sukunimi" name="" value=""><br>
+    <br>
+    <label for="sukupuoli">Sukupuolesi:</label><br>
+    <br>
+    <select id="Sukupuolesi:" name="sukupuoli" style="text-align:center;width="60px;">
+      <option value="1">Mies</option>
+      <option value="2">Nainen</option>
+      <option value="3">Muu</option>
+      <option value="4">En halua kertoa</option>
+    </select><br><br>
+
+
+    <label for="sähköposti">Sähköposti:</label><br><br>
+    <input type="text" id="sukunimi" name="" value=""><br>
+    <br>
+
+    <p>Saako sinulle lähettää markkinointisähköpostia?</p>
+
+    <input type="radio" id="valinta" name="valinta" value="value1">
+    <label for="kylla">Kyllä</label>
+
+    <input type="radio" id="valinta" name="valinta" value="value2">
+    <label for="ei">Ei</label><br>
+    <br>
+
+    <input type="submit" value="Lähetä">
+
+
+    </form>
+
+  </div>
+  <br>
+  <h3>Marko Keskitalo TVT-C 2023</h3>
+</body>
+
+</html>

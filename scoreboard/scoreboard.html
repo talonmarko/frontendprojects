@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<h1>TULOSTAULU</h1>
+
+<head>
+    <meta charset="UTF-8" />
+    <style>
+        body {
+            text-align: center;
+            background-color: #18515e;
+            font-family: digital-7;
+            font-size: 10px;
+            padding: 50px;
+        }
+
+        h1 {
+            font-family: sans-serif;
+            font-size: 60px;
+            color: white;
+            text-align: center;
+            -webkit-text-stroke: 2px black;
+        }
+
+        /* h2{
+            position: relative;
+            font-size: 40px;
+            color: white;
+            font-family: sans-serif;
+            top: 30px;
+            left: -180px;
+            -webkit-text-stroke: 2px black;
+        }
+
+        h3{
+            position: relative;
+            font-size: 40px;
+            color: white;
+            font-family: sans-serif;
+            top: -50px;
+            left: 230px; 
+            -webkit-text-stroke: 2px black;
+        } */
+
+        .home{
+            position: relative;
+            left: 3%;
+            display: inline-block;
+            height:50px;
+            width:50px;
+            border-radius:10px;
+            margin: 20px;
+        }
+
+        .visitor{
+            position: relative;
+            right: -13%;
+            display: inline-block;
+            height:50px;
+            width:50px;
+            border-radius:10px;
+            margin: 20px;
+        }
+
+        .homereset{
+            position: relative;
+            top: 50px;
+            left:-14%;
+            margin-left:50px;
+        }
+
+        .visitreset{
+            position: relative;
+            top: 50px;
+            left:-5%;
+            margin-left:50px;
+        }
+
+        #scoreboard {
+            position:relative;
+            display: row;
+            padding: 50px;
+        }
+
+        #pointsHome {
+            position: absolute;
+            border-radius: 25%;
+            border: 2px solid white;
+            height: 250px;
+            width: 250px;
+	    top: -75px;
+            left: 450px;
+            background-color: #202020;
+            font-family: digital-7;
+            font-size: 250px;
+            text-align: center;
+            color: rgb(137, 137, 137);
+        }
+<<<<<<< HEAD
+
+        #pointsVisitor {
+            position: relative;
+=======
+		
+	#visitor {
+            position: absolute;
+>>>>>>> 36eae2cdf565dc295cf04e58498f7fa79d0605af
+            border-radius: 25%;
+            border: 2px solid white;
+            height: 250px;
+            width: 250px;
+	    top: -75px;
+            left: 850px;
+            background-color: #202020;
+            font-family: digital-7;
+            font-size: 250px;
+            text-align: center;
+            color: rgb(137, 137, 137);
+        }    
+
+        .text{
+            align-items: center;
+            position: relative;
+            font-size: 50px;
+            font-family: sans-serif;
+            top: 50px;
+            color: white;
+            -webkit-text-stroke: 2px black;
+
+        }
+
+<<<<<<< HEAD
+    .homedot {
+        position: relative;
+        left: -17%;
+        top:56px;
+        margin-top:10px;
+        height: 25px;
+        width: 25px;
+        margin: 5px 5px 5px 5px;
+        background-color: #ffdada;
+        border-radius: 50%;
+        display: inline-block;
+        }
+
+    .visitdot {
+        position: relative;
+        right: -23%;
+        margin-top:10px;
+        top:20px;
+        height: 25px;
+        width: 25px;
+        margin: 5px 5px 5px 5px;
+        background-color: #ffdada;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        }
+
+    .active{
+        background-color: #ff0000;
+        }
+
+    </style>
+    </head>
+    <body>
+
+    <div id="pointsHome">0</div>
+    <div id="pointsVisitor">0</div>
+    <button id="home1" class="home">+1</button>
+    <button id="home2" class="home">+2</button>
+    <button id="home3" class="home">+3</button>
+    <button id="homereset" class="homereset">RESET</button>
+
+    <button id="visitor1" class="visitor">+1</button>
+    <button id="visitor2" class="visitor">+2</button>
+    <button id="visitor3" class="visitor">+3</button>
+    <button id="visitreset" class="visitreset">RESET</button>
+
+    <div class="text">Virheet:</div>
+
+    <div class="dotsforhome">
+        <span class="homedot"></span> 
+        <span class="homedot"></span> 
+        <span class="homedot"></span> 
+        <span class="homedot"></span> 
+        <span class="homedot"></span>
+
+    <div class="dotsforvisitor">
+        <span class="visitdot"></span> 
+        <span class="visitdot"></span> 
+        <span class="visitdot"></span> 
+        <span class="visitdot"></span> 
+        <span class="visitdot"></span>
+    
+<script>
+
+    var pointsHome = 0;
+    var pointsVisitor = 0;
+
+    // HOME TEAM POINTS ADDED AND RESET
+    
+        document.getElementById('home1').addEventListener('click', function() {
+            pointsHome += 1;
+            updatePointsHome();
+            });
+    
+        document.getElementById('home2').addEventListener('click', function() {
+            pointsHome += 2;
+            updatePointsHome();
+            });
+    
+        document.getElementById('home3').addEventListener('click', function() {
+            pointsHome += 3;
+            updatePointsHome();
+            });
+    
+        function updatePointsHome() {
+            document.getElementById('pointsHome').textContent = pointsHome;
+        }
+
+        document.getElementById('homereset').addEventListener('click', function() {
+            pointsHome = 0;
+            document.getElementById('pointsHome').textContent = pointsHome;
+            });
+
+    // VISITOR TEAM POINTS ADDED AND RESET
+
+        document.getElementById('visitor1').addEventListener('click', function() {
+            pointsVisitor += 1;
+            updatePointsVisitor();
+            });
+    
+        document.getElementById('visitor2').addEventListener('click', function() {
+            pointsVisitor += 2;
+            updatePointsVisitor();
+            });
+    
+        document.getElementById('visitor3').addEventListener('click', function() {
+            pointsVisitor += 3;
+            updatePointsVisitor();
+            });
+    
+        function updatePointsVisitor() {
+            document.getElementById('pointsVisitor').textContent = pointsVisitor;
+            }
+
+        document.getElementById('visitreset').addEventListener('click', function() {
+            pointsVisitor = 0;
+            document.getElementById('pointsVisitor').textContent = pointsVisitor;
+            });
+
+    </script>
+=======
+        .scorebuttonsforhome {
+            position: absolute;
+            top: 200px;
+            left: 510px;
+        }
+		
+	.scorebuttonsforvisitor {
+            position: absolute;
+            top: 200px;
+            left: 920px;
+        }
+
+    </style>
+	
+    <script>
+	function updateScoreboardforhome(input) {
+		var scoreboard = document.getElementById('home');
+		var currentScore = parseInt(home.innerText);
+
+		if (input === 1 || input === 2 || input === 3) {
+			var newScore = currentScore + input;
+			home.innerText = newScore;
+		}
+	}
+		
+	function updateScoreboardforvisitor(input) {
+		var scoreboard = document.getElementById('visitor');
+		var currentScore = parseInt(visitor.innerText);
+
+		if (input === 1 || input === 2 || input === 3) {
+			var newScore = currentScore + input;
+			visitor.innerText = newScore;
+		}
+	}
+
+	</script>
+
+</head>
+
+<body>
+
+    <div id="scoreboard">
+        <div id="home">0</div>
+	<div id="visitor">0</div>
+
+        <div class="scorebuttonsforhome">
+        	<button onclick="updateScoreboardforhome(1)">+1</button>
+		<button onclick="updateScoreboardforhome(2)">+2</button>
+		<button onclick="updateScoreboardforhome(3)">+3</button>
+		</div>
+		
+	<div class="scorebuttonsforvisitor">
+            <button onclick="updateScoreboardforvisitor(1)">+1</button>
+	    <button onclick="updateScoreboardforvisitor(2)">+2</button>
+	    <button onclick="updateScoreboardforvisitor(3)">+3</button>
+        </div>
+
+>>>>>>> 36eae2cdf565dc295cf04e58498f7fa79d0605af
+</body>
+</html>
+
+<<<<<<< HEAD
+=======
+</html>
+>>>>>>> 36eae2cdf565dc295cf04e58498f7fa79d0605af
