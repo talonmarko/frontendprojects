@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>My To-Do List</h1>
+    <style>
+
+    h1{
+        border: 1px solid black;
+        max-width:500px;
+        background: #eee;
+        text-align:center;
+        }
+    #containerforlist{
+        position: relative;
+        border: 1px solid black;
+        max-width:500px;
+        background: #666;
+    }
+
+    ul{
+        margin: 0;
+        padding: 0;
+        max-width:100%;
+    }
+    body{
+        font-size:30px;
+    }
+    ul li{
+        cursor: pointer;
+        position: relative;
+        padding: 10px;
+        list-style-type: none;
+        background-color: #eee;
+        transition: 0.35s ease-in;
+        margin:5px;
+    }
+    ul li:nth-child(odd){
+        background-color: #cccbcb;
+    }
+    ul li:hover{
+        background-color: #ddd;
+    }
+
+    ul li:checked{
+        text-decoration: line-through;
+    }
+    #input{
+        width:68%;
+        height:50px;
+        font-size: 30px;
+        margin: 5px 5px 5px 5px;
+        border: 1px solid black;
+    }
+    #additem{
+        position: absolute;
+        margin: 5px 5px 5px 5px;
+        width: 26%;
+        height: 54px;
+        font-size: 25px;
+        text-align: center;
+        border: 1px solid black;
+    }
+    </style>
+<div id="containerforlist">
+        
+    <input type="text" id="input" placeholder="Input task here...">
+    <button id="additem" onclick="additem">Add Task</button>
+
+    <ul id="items">
+        <li class="checked">Tyhjennä tiskikone</li>
+        <li>Pese pyykkiä</li>
+        <li>Maksa laskut</li>
+        <li>Käy kaupassa</li>
+        <li>Kastele kasvit</li>
+    </ul>
+</div>
+
+<script>
+    window.onload = function(){
+        var input = document.getElementById("input");
+        var button = document.getElementById("additem");
+        
+        function additem() {
+            var list = document.getElementById("items");
+            var newItem = document.createElement('li');
+            newItem.textContent = input.value;
+            list.appendChild(newItem);
+            input.value = "";
+            disableaddbutton();
+        }
+
+        var addTaskButton = document.getElementById("additem");
+        addTaskButton.addEventListener('click', additem);
+    
+    var list = document.getElementById("items");
+    list.addEventListener('click', function(evt){
+        if (evt.target && evt.target.nodeName == "LI") {
+            list.removeChild(evt.target);
+        }
+    },false);
+
+    function disableaddbutton(){
+        button.disabled = input.value === '';
+        input.addEventListener('keyup', function(event){
+            var inputvalue = event.target.value;
+            if(inputvalue===''){
+                button.disabled = true;
+            }else{
+                button.disabled = false;
+            }
+        });
+    }
+    disableaddbutton();
+
+    // input.addEventListener('keydown', function(event){
+    //     if(event.key === "Enter"){
+    //         event.preventDefault();
+    //         additem();
+    //         disableaddbutton();
+    //     }
+    // });
+}
+</script>
+</body>
+</html>
